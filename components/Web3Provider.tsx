@@ -1,16 +1,9 @@
 "use client";
 
-import { createConfig, http, WagmiProvider } from "wagmi";
-import { arcTestnet } from "viem/chains";
+import { WagmiProvider } from "wagmi";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactNode } from "react";
-
-const config = createConfig({
-  chains: [arcTestnet],
-  transports: {
-    [arcTestnet.id]: http(),
-  },
-});
+import { config } from "@/lib/wagmi-config";
 
 const queryClient = new QueryClient();
 
