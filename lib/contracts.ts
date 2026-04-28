@@ -17,10 +17,19 @@ export const IDENTITY_REGISTRY_ABI = [
 
 export const REPUTATION_REGISTRY_ABI = [
   {
-    inputs: [{ name: "agentId", type: "uint256" }],
-    name: "getReputation",
-    outputs: [{ name: "", type: "uint256" }],
-    stateMutability: "view",
+    inputs: [
+      { name: "agentId", type: "uint256" },
+      { name: "score", type: "int128" },
+      { name: "feedbackType", type: "uint8" },
+      { name: "tag", type: "string" },
+      { name: "metadataURI", type: "string" },
+      { name: "evidenceURI", type: "string" },
+      { name: "comment", type: "string" },
+      { name: "feedbackHash", type: "bytes32" },
+    ],
+    name: "giveFeedback",
+    outputs: [],
+    stateMutability: "nonpayable",
     type: "function",
   },
 ] as const;

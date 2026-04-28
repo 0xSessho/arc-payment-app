@@ -67,8 +67,8 @@ export function AgentCard() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 8 }}>
           {[
             { val: agent.id, label: 'Agent ID' },
-            { val: '12', label: 'Txns' },
-            { val: '3', label: 'Validated' },
+            { val: agent.txns.toString(), label: 'Txns' },
+            { val: agent.validations.toString(), label: 'Validated' },
           ].map((s) => (
             <div key={s.label} style={{ background: 'rgba(109,40,217,0.1)', border: '1px solid rgba(139,92,246,0.3)', borderRadius: 11, padding: '9px 11px' }}>
               <div style={{ fontSize: 15, fontWeight: 700, color: '#ffffff' }}>{s.val}</div>
